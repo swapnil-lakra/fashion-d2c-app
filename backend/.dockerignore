@@ -1,0 +1,55 @@
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+
+# Virtual environment
+venv
+env
+ENV
+.venv
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Database files (if any)
+*.db
+*.sqlite
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker related
+Dockerfile
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# Testing
+.pytest_cache
+.tox
+.coverage
+htmlcov
+
+# MyPy
+.mypy_cache
+
+# Ruff (linter)
+.ruff_cache
+
+# Project specific (if not needed in image)
+README.md
