@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, List
 from decimal import Decimal
+from datetime import datetime
 
 class ProductBase(BaseModel):
     name: str
@@ -20,8 +21,8 @@ class ProductBase(BaseModel):
 
 class ProductResponse(ProductBase):
     id: int
-    created_at: Optional[str] = None
-    updated_at: Optional[str] = None
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True  # For SQLAlchemy ORM mode (Pydantic v2)

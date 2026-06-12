@@ -17,8 +17,8 @@ engine = create_async_engine(
 
 AsyncSessionLocal = async_sessionmaker(
     engine,
-    class=AsyncSession,
-    expires_on_commit=False
+    class_=AsyncSession,
+    expire_on_commit=False
 )
 
 Base = declarative_base()
