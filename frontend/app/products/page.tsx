@@ -1,6 +1,16 @@
+import { getApiUrl } from "../../lib/config"
+// app/products/page.js (Server Component - No "use client")
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+
 export default async function ProductsPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/`, {
+  const apiUrl = getApiUrl();
+  const res = await fetch(`${apiUrl}/api/products/`, {
     cache: "no-store", // or 'force-cache' for static
+    next : {
+      revalidate : 60
+    }
   });
   const products = await res.json();
 

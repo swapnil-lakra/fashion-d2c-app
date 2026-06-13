@@ -1,5 +1,15 @@
+import { getApiUrl } from "../lib/config"
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+
 export default async function Home() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/featured?limit=4`);
+  const apiUrl = getApiUrl();
+  const res = await fetch(`${apiUrl}/api/products/featured?limit=4`,{
+    next : {
+      revalidate : 60
+    }
+  });
   const featured = await res.json();
 
   return (
